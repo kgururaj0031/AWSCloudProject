@@ -1,0 +1,91 @@
+/*
+SQLyog - Free MySQL GUI v5.19
+Host - 5.5.5-10.1.40-MariaDB : Database - carmor
+*********************************************************************
+Server version : 5.5.5-10.1.40-MariaDB
+*/
+
+SET NAMES utf8;
+
+SET SQL_MODE='';
+
+create database if not exists `carmor`;
+
+USE `carmor`;
+
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO';
+
+/*Table structure for table `addcomment` */
+
+DROP TABLE IF EXISTS `addcomment`;
+
+CREATE TABLE `addcomment` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `mobile` varchar(100) NOT NULL,
+  `service` varchar(100) NOT NULL,
+  `comment` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+
+/*Data for the table `addcomment` */
+
+insert into `addcomment` (`id`,`username`,`email`,`mobile`,`service`,`comment`) values (1,'anam','anam@gmail.com','8073571234','amazon','excellent');
+insert into `addcomment` (`id`,`username`,`email`,`mobile`,`service`,`comment`) values (3,'kruthika','kruthika@gmail.com','8073579012','microsoft','average');
+insert into `addcomment` (`id`,`username`,`email`,`mobile`,`service`,`comment`) values (6,'shreya','shreya@gail.com','8073575678','ibm','worst');
+insert into `addcomment` (`id`,`username`,`email`,`mobile`,`service`,`comment`) values (7,'hg','hvgfggf@gmail.com','85589','hc','hjhg');
+
+/*Table structure for table `addservice` */
+
+DROP TABLE IF EXISTS `addservice`;
+
+CREATE TABLE `addservice` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `smodel` varchar(100) NOT NULL,
+  `sname` varchar(100) NOT NULL,
+  `dmodel` varchar(100) NOT NULL,
+  `sos` varchar(100) NOT NULL,
+  `price` varchar(100) NOT NULL,
+  `cdate` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+/*Data for the table `addservice` */
+
+insert into `addservice` (`id`,`smodel`,`sname`,`dmodel`,`sos`,`price`,`cdate`) values (1,'infrastructure','Elastic Service','private','linux','900','2019-04-07');
+insert into `addservice` (`id`,`smodel`,`sname`,`dmodel`,`sos`,`price`,`cdate`) values (2,'platform','AWS Database','public','windows','700','2019-04-29');
+insert into `addservice` (`id`,`smodel`,`sname`,`dmodel`,`sos`,`price`,`cdate`) values (3,'service','A4 Storage','private','macos','750','2019-05-05');
+insert into `addservice` (`id`,`smodel`,`sname`,`dmodel`,`sos`,`price`,`cdate`) values (4,'infrastructure','Gaming Centre','public','windows','820','2019-05-10');
+insert into `addservice` (`id`,`smodel`,`sname`,`dmodel`,`sos`,`price`,`cdate`) values (5,'platform','predict model','public','windows','600','2019-06-02');
+
+/*Table structure for table `cscreg` */
+
+DROP TABLE IF EXISTS `cscreg`;
+
+CREATE TABLE `cscreg` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `mobile` varchar(100) NOT NULL,
+  `idmkey` varchar(100) DEFAULT NULL,
+  `status` varchar(100) NOT NULL,
+  `IP` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+/*Data for the table `cscreg` */
+
+insert into `cscreg` (`id`,`username`,`email`,`password`,`mobile`,`idmkey`,`status`,`IP`) values (1,'anam','anam@gmail.com','1234','8073571234','8073571234','active','192.10.10.3');
+insert into `cscreg` (`id`,`username`,`email`,`password`,`mobile`,`idmkey`,`status`,`IP`) values (2,'shreya','shreya@gail.com','5678','8073575678','8073575678','active','192.168.2.3');
+insert into `cscreg` (`id`,`username`,`email`,`password`,`mobile`,`idmkey`,`status`,`IP`) values (3,'kruthika','kruthika','9012','8073579012','8073579012','active','192.67.9.1');
+insert into `cscreg` (`id`,`username`,`email`,`password`,`mobile`,`idmkey`,`status`,`IP`) values (4,'tina','tina@gmail.com','3456','9123712343','3aaq7Qu1wd','active','192.168.6.1');
+insert into `cscreg` (`id`,`username`,`email`,`password`,`mobile`,`idmkey`,`status`,`IP`) values (5,'aman','aman@gmail.com','12','9817516789','3aaq7Qu1wd','active','192.168.6.1');
+insert into `cscreg` (`id`,`username`,`email`,`password`,`mobile`,`idmkey`,`status`,`IP`) values (6,'kruthi','kruthikagururajan94@gmail.com','12345','8073512345','807351234','active','192.4.1.6');
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
